@@ -1,7 +1,5 @@
 <?php
-
 	include_once("connection.php");
-	session_start();
 
 	class Process{
 
@@ -18,15 +16,19 @@
 			$query = 'SELECT * FROM countries WHERE id='.$_POST["country_id"];
 			$country = $this->connection->fetchRecord($query);
 
-			$_SESSION['country']['name'] = $country['name'];
-			$_SESSION['country']['continent'] = $country['continent'];
-			$_SESSION['country']['region'] = $country['region'];
-			$_SESSION['country']['population'] = $country['population'];
-			$_SESSION['country']['life_exp'] = $country['life_expectancy'];
-			$_SESSION['country']['govt'] = $country['government_form'];
-			
-			header('Location: index.php');
-			exit;
+			$data = array();
+
+			$data['html'] = "
+				<h1>Country Information</h1>
+				<hr>
+				<p>Country: {$country['name']}</p>
+				<p>Continent: {$country['continent']}</p>
+				<p>Region: {$country['region']}</p>
+				<p>Population: {$country['population']}</p>
+				<p>Life Expectancy: {$country['life_expectancy']}</p>
+				<p>Government Form: {$country['government_form']}</p>
+			";
+			echo json_encode($data);
 		}
 	}
 

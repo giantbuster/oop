@@ -13,8 +13,10 @@
 			$query = 'SELECT id, name FROM countries';
 			$result = $this->connection->fetchAll($query);
 			$html = '';
-			foreach ($result as $row){
-				$html .= "<option value='{$row['id']}'>{$row['name']}</option>";
+			if ($result){
+				foreach ($result as $row){
+					$html .= "<option value='{$row['id']}'>".$row['name']."</option>";
+				}
 			}
 			echo $html;
 		}
