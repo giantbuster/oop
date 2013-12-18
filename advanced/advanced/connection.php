@@ -25,7 +25,12 @@ class Database{
 	//fetch the first record obtained from the query
 	public function fetchRecord($query){
 		$result = mysqli_query($this->connection, $query);
-		return mysqli_fetch_assoc($result);
+		if (!$result) return null;
+		else return mysqli_fetch_assoc($result);
+	}
+
+	public function getConnection(){
+		return $this->connection;
 	}
 }
 ?>

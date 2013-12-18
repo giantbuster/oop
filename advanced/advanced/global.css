@@ -1,0 +1,83 @@
+*{
+	font-family: helvetica;
+	margin: 0px;
+	padding: 0px;
+}
+
+.login{
+	text-align: right;
+	width: auto;
+	padding: 10px 15px;
+	background: #d9d9d9;
+	height: 40px;
+}
+
+.login h3, .login form, .login form input{
+	display: inline-block;
+}
+
+.login input{
+	padding: 1px 3px;
+}
+
+.login h3{
+	margin-right: 30px;
+}
+
+.login .errors{
+	margin-top: 5px;
+	font-size: 8pt;
+	float: right;
+	margin-right: 55px;
+	/*border: 1px solid black;*/
+	width: 298px;
+}
+
+.login .errors .error{
+	float: left;
+	display: inline-block;
+	/*margin-right: 60px;*/
+	/*border: 1px solid black;*/
+}
+
+.login .errors .error:not(:first-child){
+	margin-left: 96px;
+}
+
+.registration{
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 100px;
+	vertical-align: top;
+}
+
+.registration h1{
+	margin: 15px 0px;
+}
+
+.registration form input{
+	margin: 5px;
+	padding: 3px;
+}
+
+.registration .errors{
+	font-size: 9pt;
+}
+
+table{
+	border: 1px solid black;
+	border-right: none;
+	margin: 0px;
+	border-collapse: collapse;
+}
+
+th, td{
+	min-width: 150px;
+	border-right: 1px solid black;
+	margin: 0px;
+	padding: 3px 8px;
+}
+
+th{
+	background: lightgray;
+}
